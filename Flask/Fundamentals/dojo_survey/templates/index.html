@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dojo Survey</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+</head>
+<body>
+    <div class="card bg-dark p-3" style="margin: 10px auto; width: 30%;">
+        <h2 class="text-warning card-title">Dojo Survey</h2>
+        <form action="/process" method="post">
+            <label for="name" class="text-white d-block">Name:</label>
+            <input type="text" name="name" id="name" class="d-block mb-2">
+            <label for="dojo_location" class="text-white" class="text-white d-block">Dojo Location:</label>
+            <select name="location" id="dojo_location" class="d-block mb-2">
+                <option value="" disabled selected>-- Select a location --</option>
+                <option value="chicago">Chicago</option>
+                <option value="seattle">Seattle</option>
+                <option value="burbank">Burbank</option>
+                <option value="online">Online</option>
+                <option value="bellevue">Bellevue</option>
+            </select>
+            <label for="fav_language" class="text-white d-block">Favorite Language:</label>
+            <select name="language" id="fav_language" class="d-block mb-2">
+                <option value="" disabled selected>-- Select a language --</option>
+                <option value="html">HTML</option>
+                <option value="css">CSS</option>
+                <option value="javascript">JavaScript</option>
+                <option value="python">Python</option>
+                <option value="c#">C#</option>
+            </select>
+            <label for="comments" class="text-white d-block">Comments:</label>
+            <textarea name="comments" id="comments" cols="30" rows="10" class="mb-2"></textarea>
+            <button class="btn btn-warning d-block">Submit</button>
+        </form>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
+</body>
+</html>
