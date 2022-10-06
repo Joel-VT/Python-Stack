@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <title>READ( ONE )</title>
+</head>
+<body class="p-1">
+    <div class="d-flex justify-content-between align-items-center">
+        <h1>User {{user.id}}</h1>
+        <a href="/" class="btn btn-dark">Home</a>
+    </div>
+    <table class="table table-striped table-hover">
+        <thead>
+            <tr class="border border-top-0 border-end-0 border-start-0 border-dark">
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Email</th>
+                <th>Created On</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>{{user.first_name}}</td>
+                <td>{{user.last_name}}</td>
+                <td>{{user.email}}</td>
+                <td>{{user.created_at}}</td>
+            </tr>
+        </tbody>
+    </table>
+    <p>
+        <a href="/user/update/{{user.id}}" class="btn btn-primary">Edit</a> 
+        <a href="/user/delete/{{user.id}}" class="btn btn-primary">Delete</a>
+    </p>
+</body>
+</html>
