@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+</head>
+<body class="p-3">
+    <div class="container">
+        <div class="d-flex justify-content-between align-items-center">
+            <h1>Welcome, {{user.first_name}}</h1>
+            <div class="d-flex justify-content-between gap-1">
+                <a href="/welcome/{{session['user_id']}}" class="btn btn-primary">Dashboard</a>
+                <a href="/logout" class="btn btn-dark">Logout</a>
+            </div>
+        </div>
+        <div class="d-flex justify-content-between align-items-center mt-4">
+            <h3>{{recipe.name}}</h3>
+            <h5>Posted by: {{recipe.user.first_name}}</h5>
+        </div>
+        <div class="container border border-dark p-2">
+            <div class="d-flex align-item-start">
+                <p class="me-5">Description:</p> 
+                <p class="ms-3">{{recipe.description}}</p>
+            </div>
+            <div class="d-flex align-item-start">
+                <p class="me-2">Under 30 Minutes?</p> 
+                <p class="ms-1">    
+                    {% if recipe.under_30 == 1 %} 
+                    Yes 
+                    {% else %} 
+                    No 
+                    {% endif %}
+                </p>
+            </div>
+            <div class="d-flex align-item-start">
+                <p class="me-5">Instructions:</p> 
+                <p class="ms-3">{{recipe.instructions}}</p>
+            </div>
+            <div class="d-flex align-item-start">
+                <p class="me-4">Date Made:</p> 
+                <p class="ms-5">{{recipe.date_cooked.strftime("%B %-d, %Y")}}</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
